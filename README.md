@@ -1,6 +1,6 @@
 # Your First Server Application
 
-Deployment Link:
+Deployment Link: https://swe-8-1-first-server-jordid13.onrender.com/
 
 - [Setup](#setup)
 - [Starter Code](#starter-code)
@@ -45,30 +45,30 @@ You got this!
 
 **Server Setup Requirements**
 
-- [ ] The root of the repository has a `server` folder with an `index.js` file and a `package.json` file inside (you will need to create this folder and these files!)
-- [ ] `package.json` has `express` installed as a dependency
-- [ ] `package.json` has `nodemon` as a dev dependency (use the `-D` flag when installing)
-- [ ] `package.json` has a `"start"` script that uses `node` to run the `index.js` file and a `"dev"` script that uses `nodemon` to run `index.js`.
-- [ ] In `index.js`, the `express()` function is used to create an `app`
-- [ ] The `app` listens on an available port (I recommend `8080`)
+- [x] The root of the repository has a `server` folder with an `index.js` file and a `package.json` file inside (you will need to create this folder and these files!)
+- [x] `package.json` has `express` installed as a dependency
+- [x] `package.json` has `nodemon` as a dev dependency (use the `-D` flag when installing)
+- [x] `package.json` has a `"start"` script that uses `node` to run the `index.js` file and a `"dev"` script that uses `nodemon` to run `index.js`.
+- [x] In `index.js`, the `express()` function is used to create an `app`
+- [x] The `app` listens on an available port (I recommend `8080`)
 
 **Server API Requirements**
 
-- [ ] A `logRoutes` middleware controller prints the request method, url, and time of request for every request sent to the server, and then invokes the `next()` middleware in the chain.
-- [ ] The server has a `GET /api/joke` endpoint that responds with a joke of your choosing!
-- [ ] The server has a `GET /api/picture` endpoint that responds with the URL of a picture of your choosing (use a URL from the internet!)
-- [ ] The server has a `GET /api/rollDie` endpoint that responds with an array containing a random dice roll.
-- [ ] The `GET /api/rollDie` endpoint uses a `?quantity=` query parameter to specif the number of die rolls to be added to the `rolls` array.
+- [x] A `logRoutes` middleware controller prints the request method, url, and time of request for every request sent to the server, and then invokes the `next()` middleware in the chain.
+- [x] The server has a `GET /api/joke` endpoint that responds with a joke of your choosing!
+- [x] The server has a `GET /api/picture` endpoint that responds with the URL of a picture of your choosing (use a URL from the internet!)
+- [x] The server has a `GET /api/rollDie` endpoint that responds with an array containing a random dice roll.
+- [x] The `GET /api/rollDie` endpoint uses a `?quantity=` query parameter to specif the number of die rolls to be added to the `rolls` array.
 
 **Static Assets Requirements**
 
-- [ ] The root of the repository contains a Vite + React application. The folder containing the project is a sibling of `server`
-- [ ] The `path` module and `__dirname` are used to generate an absolute path to the `dist/` folder of your React application
-- [ ] The `express.static()` middleware serves the static assets in the React application's `dist/` folder.
+- [x] The root of the repository contains a Vite + React application. The folder containing the project is a sibling of `server`
+- [x] The `path` module and `__dirname` are used to generate an absolute path to the `dist/` folder of your React application
+- [x] The `express.static()` middleware serves the static assets in the React application's `dist/` folder.
 
 **Deployment Technical Requirements**
 
-- [ ] The project is deployed using Render and the link is listed at the top of this README.
+- [x] The project is deployed using Render and the link is listed at the top of this README.
 
 ## Step 1 — Server Setup
 
