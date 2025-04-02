@@ -1,6 +1,6 @@
 # Your First Server Application
 
-Deployment Link: 
+Deployment Link:
 
 - [Setup](#setup)
 - [Starter Code](#starter-code)
@@ -35,6 +35,7 @@ Instead of automated tests, your grade on this assignment will be determined by 
 Feel free to mark these tasks as complete/incomplete as you go. Your instructor may modify your tasks as complete/incomplete when grading.
 
 This assignment has 19 requirements:
+
 - 6 server setup requirements
 - 9 server API requirements
 - 3 static asset requirements
@@ -74,14 +75,16 @@ You got this!
 > ✅ You will know that you've completed this step when you can run `npm run dev` and `npm run start` to execute your `index.js` file.
 
 **Create your files:**
-* Create a `server` folder and `cd` into it.
-* Run `npm init -Y` to create a `package.json` file.
-* Create an `index.js` file in the `server` folder.
+
+- Create a `server` folder and `cd` into it.
+- Run `npm init -Y` to create a `package.json` file.
+- Create an `index.js` file in the `server` folder.
 
 **Configure package.json**
-* Run `npm i express` to install express
-* Run `npm i -D nodemon` to install Nodemon as a dev dependency
-* Modify the `package.json` file with the following `"scripts"`:
+
+- Run `npm i express` to install express
+- Run `npm i -D nodemon` to install Nodemon as a dev dependency
+- Modify the `package.json` file with the following `"scripts"`:
 
 ```json
 "scripts": {
@@ -103,22 +106,24 @@ Now it is time to write the server application! Refer to the [lecture notes](htt
 In total, your application will have 3 endpoints:
 
 1. Create a `GET /api/picture` endpoint that responds with the URL of a picture of your choosing (use a URL from the internet!)
-    - Request URL: [http://localhost:8080/api/picture](http://localhost:8080/api/picture)
-    - Response Structure: `{ src: "" }`
-    - Example Response: `{ src: "https://static-cdn.jtvnw.net/jtv_user_pictures/meowntain-profile_banner-71b7a6d0d943dc9e-480.jpeg" }`
+
+   - Request URL: [http://localhost:8080/api/picture](http://localhost:8080/api/picture)
+   - Response Structure: `{ src: "" }`
+   - Example Response: `{ src: "https://static-cdn.jtvnw.net/jtv_user_pictures/meowntain-profile_banner-71b7a6d0d943dc9e-480.jpeg" }`
 
 2. Create a `GET /api/joke` endpoint that responds with a joke of your choosing!
-    - Request URL: [http://localhost:8080/api/joke](http://localhost:8080/api/joke)
-    - Response Structure: `{ setup: "", punchline: ""}`
-    - Example Response: `{ setup: "what do you call a pile of kittens?", punchline: "a meowntain" }`
+
+   - Request URL: [http://localhost:8080/api/joke](http://localhost:8080/api/joke)
+   - Response Structure: `{ setup: "", punchline: ""}`
+   - Example Response: `{ setup: "what do you call a pile of kittens?", punchline: "a meowntain" }`
 
 3. Create a `GET /api/rollDie` endpoint. It should be able to handle a `?quantity=` query parameter that lets the client specify the number of dice to roll. If no value is provided, or an invalid value is provided, roll one die.
-    - Request URL: [http://localhost:8080/api/rollDie](http://localhost:8080/api/rollDie)
-    - Response Structure: `{ rolls: [] }`
-    - Example Responses
-      - With a query parameter `/api/rollDie?quantity=3`: `{ rolls: [5, 2, 3] }`
-      - No query parameter `/api/rollDie`: `{ rolls: [4] }`
-      - Invalid query parameter `/api/rollDie?quantity=foo` : `{ rolls: [2] }`
+   - Request URL: [http://localhost:8080/api/rollDie](http://localhost:8080/api/rollDie)
+   - Response Structure: `{ rolls: [] }`
+   - Example Responses
+     - With a query parameter `/api/rollDie?quantity=3`: `{ rolls: [5, 2, 3] }`
+     - No query parameter `/api/rollDie`: `{ rolls: [4] }`
+     - Invalid query parameter `/api/rollDie?quantity=foo` : `{ rolls: [2] }`
 
 As you build your server, visit [http://localhost:8080](http://localhost:8080) (or whatever port number you chose) and test out your server's API endpoints!
 
@@ -144,26 +149,38 @@ Now that your server has API endpoints, let's create a website to show users how
 2. Run `npm create vite` to create a React+JavaScript application. This folder should be a sibling to `server`.
 3. Remove the provided starter code and replace the `App` will the following (feel free to modify it):
 
-    ```js
-    function App() {
+   ```js
+   function App() {
+     return (
+       <>
+         <main>
+           <h1>My First API</h1>
+           <p>
+             Welcome to my first API! This is a simple API that returns a random
+             joke, can roll dice for you, and can provide you with a nice
+             picture. Enjoy!
+           </p>
+           <ul>
+             <li>
+               Visit <a href="/api/joke">/api/joke</a> for a funny joke
+             </li>
+             <li>
+               Visit <a href="/api/picture">/api/picture</a> to see a nice
+               picture
+             </li>
+             <li>
+               Visit <a href="/api/rollDie">/api/rollDie</a> to roll a die. (Try{" "}
+               <a href="/api/rollDie?quantity=3">/api/rollDie?quantity=3</a> to
+               roll multiple dice!)
+             </li>
+           </ul>
+         </main>
+       </>
+     );
+   }
 
-      return (
-        <>
-          <main>
-            <h1>My First API</h1>
-            <p>Welcome to my first API! This is a simple API that returns a random joke, can roll dice for you, and can provide you with a nice picture. Enjoy!</p>
-            <ul>
-              <li>Visit <a href="/api/joke">/api/joke</a> for a funny joke</li>
-              <li>Visit <a href="/api/picture">/api/picture</a> to see a nice picture</li>
-              <li>Visit <a href="/api/rollDie">/api/rollDie</a> to roll a die. (Try <a href="/api/rollDie?quantity=3">/api/rollDie?quantity=3</a> to roll multiple dice!)</li>
-            </ul>
-          </main>
-        </>
-      )
-    }
-
-    export default App
-    ```
+   export default App;
+   ```
 
 4. Next, run `npm run build` to build static assets for this React application.
 
